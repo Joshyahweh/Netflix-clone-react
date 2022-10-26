@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContextProvider } from "./context/AuthContext";
 import Account from "./page/Account";
 import Home from "./page/Home";
@@ -15,7 +16,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/account" element={<Account />} />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <Account />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </AuthContextProvider>
     </div>
