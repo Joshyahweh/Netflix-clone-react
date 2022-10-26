@@ -6,6 +6,7 @@ const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  // eslint-disable-next-line
   const { user, logIn } = useAuth();
   const navigate = useNavigate();
 
